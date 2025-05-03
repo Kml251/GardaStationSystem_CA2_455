@@ -79,7 +79,36 @@ public class GardaStationSystem_CA2_455 {
                             System.out.println((i+1) +". \t" + gardaList.get(i));
                         }
                     }
-                    case SEARCH -> System.out.println("-> Searching records...");
+                    case SEARCH -> {
+                        System.out.println("-> Searching records...");
+                        
+                        if (gardaList.isEmpty()) {
+                            System.out.println("Garda list is empty. Add or import records first.");
+                            break;
+                        }
+                        
+                        // Ask for name to search
+                        System.out.print("Please enter the full Garda name to search for: ");
+                        String input = kb.nextLine().trim();
+
+                        // Sort list before searching (binary search requires sorted)
+                        gardaList.bubbleRecursiveSort();
+
+                        // Create a dummy Garda with only the name (to match against)
+                        Garda searchKey = new Garda(input, "", "");
+
+                        // Call your recursive binary search
+                        int result = gardaList.binarySearch_Recursive(searchKey, 0, gardaList.size() - 1);
+                        
+                        if (result != -1) {
+                            System.out.println("\n Garda found: ");
+                            System.out.printf("%-8s %-40s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                            System.out.println("------------------------------------------------------------------------------------------------------");
+                            System.out.printf("%-8d %s%n", (result + 1), gardaList.get(result));
+                        } else {
+                            System.out.println("No Garda found with the name: " + input);
+                        }                        
+                    }    
                     case ADD_RECORD -> System.out.println("-> Adding a new Garda...");
                     case GENERATE_RANDOM -> System.out.println("-> Generating random Gardaí...");
                     case DISPLAY_ALL -> {
