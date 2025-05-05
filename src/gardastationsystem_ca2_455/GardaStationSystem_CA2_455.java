@@ -85,36 +85,42 @@ public class GardaStationSystem_CA2_455 {
                             System.out.println((i+1) +". \t" + gardaList.get(i));
                         }
                     }
-                    case SEARCH -> {
+                    case SEARCH -> {                                                
                         System.out.println("-> Searching records...");
                         
+                        // Check if the Garda list is empty before attempting search
                         if (gardaList.isEmpty()) {
                             System.out.println("Garda list is empty. Add or import records first.");
                             break;
                         }
-                        
-                        // Ask for name to search
+
+                        // Prompt the user to enter the full Garda name to search
                         System.out.print("Please enter the full Garda name to search for: ");
                         String input = kb.nextLine().trim();
 
                         // Sort list before searching (binary search requires sorted)
                         gardaList.bubbleRecursiveSort();
 
-                        // Create a dummy Garda with only the name (to match against)
+                        // Create a dummy Garda with only the name
+                        // This will be used to compare against existing Garda objects in the list
                         Garda searchKey = new Garda(input, null, null);
 
-                        // Call your recursive binary search
+                        // Perform recursive binary search for the given Garda name
+                        // Returns the index of the match or -1 if not found
                         int result = gardaList.binarySearch_Recursive(searchKey, 0, gardaList.size() - 1);
                         
+                        // Display result
                         if (result != -1) {
+                            // Garda found, display in a formatted table
                             System.out.println("\n Garda found: ");
                             System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
                             System.out.println("------------------------------------------------------------------------------------------------------");
                             System.out.printf("%-8d %s%n", (result + 1), gardaList.get(result));
                         } else {
+                            // No match found, show warning
                             System.out.println("No Garda found with the name: " + input);
-                        }                        
-                    }    
+                        }  
+                    }
                     case ADD_RECORD -> {
                         System.out.println("-> Adding a new Garda...");
                         System.out.println("Please enter Garda's full name: ");
