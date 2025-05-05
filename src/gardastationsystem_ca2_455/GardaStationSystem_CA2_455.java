@@ -85,7 +85,7 @@ public class GardaStationSystem_CA2_455 {
                             System.out.println((i+1) +". \t" + gardaList.get(i));
                         }
                     }
-                    case SEARCH -> {                                                
+                    case SEARCH -> {
                         System.out.println("-> Searching records...");
                         
                         // Check if the Garda list is empty before attempting search
@@ -242,6 +242,26 @@ public class GardaStationSystem_CA2_455 {
                     }
                     case DELETE_GARDA -> { 
                         System.out.println("-> Deleting a Garda...");
+                        
+                        // Prompt user to enter the name of the Garda to delete
+                        String nameToDelete = kb.nextLine().trim();
+                        boolean found = false; // Flag to track if the Garda was found
+                        
+                        // Iterate through the Garda list
+                        for(int i = 0; i < gardaList.size(); i++){
+                            // Check if current Garda's name matches the input
+                            if(gardaList.get(i).getName().equalsIgnoreCase(nameToDelete)){
+                                // If found, remove the Garda from the list
+                                Garda removed = gardaList.remove(i);
+                                System.out.println("Deleted: " + removed.getName());
+                                found = true; // Mark as found
+                                break; // Exit the loop after deleting
+                            }
+                        }
+                        // If no matching Garda was found, show an appropriate message
+                        if(!found){
+                            System.out.println("Garda named \"" + nameToDelete + "\" not found in the list.");
+                        }
                     }
                     case EXPORT_REPORT -> {
                         System.out.println("-> Exporting report...");
