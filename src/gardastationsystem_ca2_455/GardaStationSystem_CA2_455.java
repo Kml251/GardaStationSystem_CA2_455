@@ -95,7 +95,7 @@ public class GardaStationSystem_CA2_455 {
                         gardaList.bubbleRecursiveSort();
 
                         // Create a dummy Garda with only the name (to match against)
-                        Garda searchKey = new Garda(input, "", "");
+                        Garda searchKey = new Garda(input, null, null);
 
                         // Call your recursive binary search
                         int result = gardaList.binarySearch_Recursive(searchKey, 0, gardaList.size() - 1);
@@ -109,7 +109,74 @@ public class GardaStationSystem_CA2_455 {
                             System.out.println("No Garda found with the name: " + input);
                         }                        
                     }    
-                    case ADD_RECORD -> System.out.println("-> Adding a new Garda...");
+                    case ADD_RECORD -> {
+                        System.out.println("-> Adding a new Garda...");
+                        System.out.println("Please enter Garda's full name: ");
+                        String name = kb.nextLine();
+                        
+                        // Manager options
+                        Manager[] managerOptions = {
+                            new GardaCommissioner(),
+                            new DeputyCommissioner(),
+                            new Superintendent(),
+                            new Inspector(),
+                            new Sergeant()
+                        };
+                        
+                        System.out.println("\n Please select Manager's Type: ");
+                        
+                        for(int i = 0; i < managerOptions.length; i++){
+                            System.out.println((i+1) + "." + managerOptions[i].getTitle());
+                        }
+                        
+                        int managerChoice = -1;
+                        
+                        while (managerChoice < 1 || managerChoice > managerOptions.length) {
+                            System.out.print("Enter your choice (1-" + managerOptions.length + "): ");
+                            
+                            try {
+                                managerChoice = Integer.parseInt(kb.nextLine());
+                            } catch (NumberFormatException e) {
+                                System.out.println("Invalid input. Please enter a number.");
+                            }
+                        }
+                        Manager selectedManager = managerOptions[managerChoice - 1];
+                        
+                        // Department options
+                        Department[] departmentOptions = {
+                            new CyberCrimeUnit(),
+                            new CrimeInvestigationUnit(),
+                            new CommunityPolicingUnit(),
+                            new DrugsOrganisedCrimeBureau(),
+                            new NationalImmigrationBureau()
+                        };
+                        System.out.println("\nSelect Department:");
+                        
+                        for (int i = 0; i < departmentOptions.length; i++) {
+                            System.out.println((i + 1) + ". " + departmentOptions[i]);
+                        }
+                        
+                        int departmentChoice = -1;
+                        
+                        while (departmentChoice < 1 || departmentChoice > departmentOptions.length) {
+                            System.out.print("Enter your choice (1-" + departmentOptions.length + "): ");
+                            
+                            try {
+                                departmentChoice = Integer.parseInt(kb.nextLine());
+                            } catch (NumberFormatException e) {
+                                System.out.println("Invalid input. Please enter a number.");
+                            }
+                        }
+                        Department selectedDepartment = departmentOptions[departmentChoice - 1];
+                        
+                        // Create and add the Garda
+                        Garda newGarda = new Garda(name, selectedManager, selectedDepartment);
+                        gardaList.add(newGarda);
+                        System.out.println("\n Successfully added:");
+                        System.out.println("   Name: \t" + name);
+                        System.out.println("   Manager: \t" + selectedManager);
+                        System.out.println("   Department: \t" + selectedDepartment);
+                    }
                     case GENERATE_RANDOM -> System.out.println("-> Generating random Gardaí...");
                     case DISPLAY_ALL -> {
                         System.out.println("-> Displaying all Gardaí...");
@@ -144,16 +211,20 @@ public class GardaStationSystem_CA2_455 {
         
         String filename = "Applicants_Form.txt"; // To read txt file
         
-        String[] managerTypes = {"Garda Commissioner",
-                                 "Deputy Commissioner",
-                                 "Superintendent",
-                                 "Inspector",
-                                 "Sergeant"};
-        String[] departments = {"Crime Investigaion Unit",
-                                 "Cyber Crime Unit",
-                                 "Drugs & Organised Crime Bureau",
-                                 "Community Policing Unit",
-                                 "National Immigration Bureau"};
+        Manager[] managerTypes = {
+            new GardaCommissioner(),
+            new DeputyCommissioner(),
+            new Superintendent(),
+            new Inspector(),
+            new Sergeant()
+        };
+        Department[] departments = {
+            new CrimeInvestigationUnit(),
+            new CyberCrimeUnit(),
+            new DrugsOrganisedCrimeBureau(),
+            new CommunityPolicingUnit(),
+            new NationalImmigrationBureau()
+        };
         
         Random random = new Random(); // To split the types and departments randomly
         BufferedReader reader = new BufferedReader(new FileReader(filename)); 
@@ -163,10 +234,10 @@ public class GardaStationSystem_CA2_455 {
             while ((line = reader.readLine()) != null){
             
             if(!line.trim().isEmpty()){
-                String randomManager = managerTypes[random.nextInt(managerTypes.length)];
-                    String randomDepartment = departments[random.nextInt(departments.length)];
-                    Garda newGarda = new Garda(line.trim(), randomManager, randomDepartment);
-                    gardaList.add(newGarda);
+                Manager randomManager = managerTypes[random.nextInt(managerTypes.length)];
+                Department randomDepartment = departments[random.nextInt(departments.length)];
+                Garda newGarda = new Garda(line.trim(), randomManager, randomDepartment);
+                gardaList.add(newGarda);
             }
             System.out.println("File read successfully. Gardaí loaded from Applicants_Form.txt.\n");
             } 
