@@ -232,15 +232,15 @@ public class GardaStationSystem_CA2_455 {
             String line;
             
             while ((line = reader.readLine()) != null){
-            
-            if(!line.trim().isEmpty()){
-                Manager randomManager = managerTypes[random.nextInt(managerTypes.length)];
-                Department randomDepartment = departments[random.nextInt(departments.length)];
-                Garda newGarda = new Garda(line.trim(), randomManager, randomDepartment);
-                gardaList.add(newGarda);
+                
+                if(!line.trim().isEmpty()){
+                    Manager randomManager = managerTypes[random.nextInt(managerTypes.length)];
+                    Department randomDepartment = departments[random.nextInt(departments.length)];
+                    Garda newGarda = new Garda(line.trim(), randomManager, randomDepartment);
+                    gardaList.add(newGarda);
+                }
             }
             System.out.println("File read successfully. Gardaí loaded from Applicants_Form.txt.\n");
-            } 
         }catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
         }   
