@@ -69,10 +69,16 @@ public class GardaStationSystem_CA2_455 {
                 switch (option) {
                     case SORT -> {
                         System.out.println("-> Sorting Gardaí list...");
+                        
+                        if (gardaList.isEmpty()) {
+                            System.out.println("Garda list is empty. Add or import records first.");
+                            break;
+                        }
+                        
                         gardaList.bubbleRecursiveSort();
                         
                         System.out.println("\n=== First 20 Sorted Gardaí ===");
-                        System.out.printf("%-8s %-40s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                        System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
                         System.out.println("------------------------------------------------------------------------------------------------------");
                         
                         for(int i=0; i < Math.min(20, gardaList.size()); i++){
@@ -102,7 +108,7 @@ public class GardaStationSystem_CA2_455 {
                         
                         if (result != -1) {
                             System.out.println("\n Garda found: ");
-                            System.out.printf("%-8s %-40s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                            System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
                             System.out.println("------------------------------------------------------------------------------------------------------");
                             System.out.printf("%-8d %s%n", (result + 1), gardaList.get(result));
                         } else {
@@ -121,14 +127,12 @@ public class GardaStationSystem_CA2_455 {
                             new Superintendent(),
                             new Inspector(),
                             new Sergeant()
-                        };
-                        
+                        };                        
                         System.out.println("\n Please select Manager's Type: ");
                         
                         for(int i = 0; i < managerOptions.length; i++){
                             System.out.println((i+1) + "." + managerOptions[i].getTitle());
-                        }
-                        
+                        }                        
                         int managerChoice = -1;
                         
                         while (managerChoice < 1 || managerChoice > managerOptions.length) {
@@ -177,14 +181,52 @@ public class GardaStationSystem_CA2_455 {
                         System.out.println("   Manager: \t" + selectedManager);
                         System.out.println("   Department: \t" + selectedDepartment);
                     }
-                    case GENERATE_RANDOM -> System.out.println("-> Generating random Gardaí...");
+                    case GENERATE_RANDOM -> {
+                        System.out.println("-> Generating random Gardaí...");
+                        String[] firstname = {
+                                "Jack", "Emma", "Danial", "Grace", "James",
+                                "Emily", "Micheal", "Raymond", "Niamh", "Amy"
+                        };
+                        String[] surname = {
+                                "Ryan", "Walsh", "Murphy", "Kavanagh", "O'Brian",
+                                "Byrne", "O'Connell", "Nolan", "Conor", "Potter"
+                        };
+                        Manager[] managerOptions = {
+                            new GardaCommissioner(),
+                            new DeputyCommissioner(),
+                            new Superintendent(),
+                            new Inspector(),
+                            new Sergeant()
+                        };
+                        Department[] departmentOptions = {
+                            new CyberCrimeUnit(),
+                            new CrimeInvestigationUnit(),
+                            new CommunityPolicingUnit(),
+                            new DrugsOrganisedCrimeBureau(),
+                            new NationalImmigrationBureau()                        
+                        };
+                        Random rand = new Random();
+                        int count = 5;
+                        System.out.printf("%-30s %-30s %-30s %n", "Name", "Manager", "Department");
+                        System.out.println("------------------------------------------------------------------------------------------------------");
+                        
+                        for(int i = 0; i< count; i++){
+                            String name = firstname[rand.nextInt(firstname.length)] +  " "+
+                                          surname[rand.nextInt(surname.length)];
+                            Manager m = managerOptions[rand.nextInt(managerOptions.length)];
+                            Department d = departmentOptions[rand.nextInt(departmentOptions.length)];
+                            Garda g = new Garda(name, m, d);
+                            gardaList.add(g);
+                            System.out.printf("%8s %n", g, m, d);
+                        }
+                    }
                     case DISPLAY_ALL -> {
                         System.out.println("-> Displaying all Gardaí...");
                         if (gardaList.isEmpty()){
                             System.out.println("No Gardaí found.");
                         }
                         else{
-                            System.out.printf("%-8s %-40s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                            System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
                             System.out.println("------------------------------------------------------------------------------------------------------");
                             
                             for(int i=0; i < gardaList.size(); i++){
@@ -192,8 +234,12 @@ public class GardaStationSystem_CA2_455 {
                             }
                         }
                     }
-                    case DELETE_GARDA -> System.out.println("-> Deleting a Garda...");
-                    case EXPORT_REPORT -> System.out.println("-> Exporting report...");
+                    case DELETE_GARDA -> { 
+                        System.out.println("-> Deleting a Garda...");
+                    }
+                    case EXPORT_REPORT -> {
+                        System.out.println("-> Exporting report...");
+                    }
                     case EXIT -> {
                         exit = true; // Exit selected, break the loop
                         System.out.println("Exiting system. Thank you!");
