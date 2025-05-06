@@ -21,6 +21,7 @@ and perform operations such as sorting, searching, generating, and exporting rep
 - Delete Garda records by name
 - Export list to `Garda_Report.txt`
 - Load names from external `Applicants_Form.txt`file
+- Display Gardaí sorted by Manager or Department type
 
 ---
 
@@ -48,3 +49,21 @@ and perform operations such as sorting, searching, generating, and exporting rep
 ## 📤 Export Report ![Export Badge](https://img.shields.io/badge/-Generates%20TXT%20Report-green)
 
 Exports Garda list to a formmatted text file: `Garda_Report.txt`
+- Includes columns for Name, Manager, Department
+- Keeps exported data aligned in table format
+
+---
+
+## 👨‍🎓 Student Info
+
+- **Student ID**: 2024455 
+- **Student Name**: Kamil Yildiz 
+- **Assignment**: CA_2 – Java Console Application  
+- **Course**: Algorithms and Constructs (Object-Oriented Programming) 
+- **College**: College of Computing Technology (CCT) 
+
+---
+
+## 🔗 GitHub Repository
+
+> https://github.com/Kml251/GardaStationSystem_CA2_455
