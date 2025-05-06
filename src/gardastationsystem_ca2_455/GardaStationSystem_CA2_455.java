@@ -265,6 +265,27 @@ public class GardaStationSystem_CA2_455 {
                     }
                     case EXPORT_REPORT -> {
                         System.out.println("-> Exporting report...");
+                        
+                        // Attempt to create and write to a text file named Garda_Report.txt
+                        try(java.io.PrintWriter writer = new java.io.PrintWriter("Garda_Report.txt")){
+                            
+                            // Write table headers to the file
+                            writer.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                            writer.println("------------------------------------------------------------------------------------------------------");
+                            
+                            // Loop through each Garda in the list and write their details in formatted rows
+                            for(int i = 0; i < gardaList.size(); i++){
+                                writer.printf("%-8s %-30s %-30s %-30s%n", (i+1),
+                                        gardaList.get(i).getName(),
+                                        gardaList.get(i).getManagerType(),
+                                        gardaList.get(i).getDepartment());
+                            }
+                            // Notify user that report was created successfully
+                            System.out.println("Report exported successfully!");
+                        } catch(Exception e){
+                            // Handle any errors during file creation or writing
+                            System.out.println("Failed to export report! " + e.getMessage());
+                        }
                     }
                     case EXIT -> {
                         exit = true; // Exit selected, break the loop
