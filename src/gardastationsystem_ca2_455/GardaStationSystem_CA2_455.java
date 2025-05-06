@@ -40,10 +40,10 @@ public class GardaStationSystem_CA2_455 {
             boolean exit = false; // Controls when to exit the main menu loop
 
             // Welcome message
-            System.out.println("=========================================");
-            System.out.println("Welcome to Garda Station System - CA_2");
-            System.out.println("Student ID: 2024455");
-            System.out.println("=========================================");
+            System.out.println("=================================================");
+            System.out.println("     Welcome to Garda Station System - CA_2      ");
+            System.out.println("               Student ID: 2024455               ");
+            System.out.println("=================================================");
 
             // Main menu loop
             do {
@@ -52,13 +52,13 @@ public class GardaStationSystem_CA2_455 {
 
                 // Input validation loop - ensure a valid option is selected
                 while (option == null) {
-                    System.out.println("\nPlease select an option (1-8): ");
+                    System.out.println("\nPlease select an option (1-9): ");
                     try {
                         int input = Integer.parseInt(kb.nextLine()); // Read user input
                         option = MenuOption.fromInt(input); // Convert input to a MenuOption
 
                         if (option == null) {
-                            System.out.println("Invalid Option. Please choose a number from 1 to 8.");
+                            System.out.println("Invalid Option. Please choose a number from 1 to 9.");
                         }
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid input. Please enter a valid number.");
