@@ -83,7 +83,7 @@ public class GardaStationSystem_CA2_455 {
                         // Display only the first 20 sorted Gardaí
                         System.out.println("\n=== First 20 Sorted Gardaí ===");
                         System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
-                        System.out.println("------------------------------------------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------------------------------------------------");
                         
                         // Display up to the first 20 Gardaí after sorting
                         for(int i=0; i < Math.min(20, gardaList.size()); i++){
@@ -120,7 +120,7 @@ public class GardaStationSystem_CA2_455 {
                             // Garda found, display in a formatted table
                             System.out.println("\n Garda found: ");
                             System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
-                            System.out.println("------------------------------------------------------------------------------------------------------");
+                            System.out.println("---------------------------------------------------------------------------------------------------");
                             System.out.printf("%-8d %s%n", (result + 1), gardaList.get(result));
                         } else {
                             // No match found, show warning
@@ -236,7 +236,7 @@ public class GardaStationSystem_CA2_455 {
                         
                         // Display header for the generated records
                         System.out.printf("%-8s %-30s %-30s %-30s %n","#", "Name", "Manager", "Department");
-                        System.out.println("------------------------------------------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------------------------------------------------");
                         
                         // Generate each Garda, assign random manager and department, and add to list
                         for(int i = 0; i< count; i++){
@@ -265,13 +265,90 @@ public class GardaStationSystem_CA2_455 {
                         else{
                             // Print the table header with aligned column titles
                             System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
-                            System.out.println("------------------------------------------------------------------------------------------------------");
+                            System.out.println("---------------------------------------------------------------------------------------------------");
                             
                             // Loop through and display each Garda in the list
                             for(int i=0; i < gardaList.size(); i++){
                                 // Print index and Garda information using the Garda's toString() format
                                 System.out.println((i+1) + ".\t" + gardaList.get(i));
                             }
+                        }
+                    }
+                    case DISPLAY_SORTED_BY_ROLE -> {
+                    
+                        System.out.println("-> Searching records...");
+                        
+                        // Check if the Garda list is empty before attempting to sort or display
+                        if (gardaList.isEmpty()) {
+                            System.out.println("Garda list is empty. Add or import records first.");
+                            break;
+                        }
+                        
+                        // Prompt the user to choose the sorting mode
+                        System.out.println("""
+                                           Choose search mode:
+                                           1. Sorting Manager titles
+                                           2. Sorting Departments
+                                           """);
+                        
+                        String inputMode = kb.nextLine().trim();
+                        
+                        switch (inputMode) {
+                            case "1" -> {
+                                    // Clone the list to avoid altering original
+                                    MyArrayList<Garda> sortedByManager = new MyArrayList<>();
+                                    
+                                    for (int i = 0; i < gardaList.size(); i++) {
+                                        sortedByManager.add(gardaList.get(i));
+                                    }
+                                    
+                                    // Sort using insertion sort on manager titles
+                                    for (int i = 1; i < sortedByManager.size(); i++) {
+                                        Garda key = sortedByManager.get(i);
+                                        int j = i - 1;
+                                        while (j >= 0 && sortedByManager.get(j).getManagerType().getTitle()
+                                                            .compareToIgnoreCase(key.getManagerType().getTitle()) > 0) {
+                                                            sortedByManager.set(j + 1, sortedByManager.get(j));
+                                                            j--;
+                                        }
+                                        sortedByManager.set(j + 1, key);
+                                    }
+                                    // Display the sorted Gardaí by manager title
+                                    System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                                    System.out.println("---------------------------------------------------------------------------------------------------");
+                                    for (int i = 0; i < sortedByManager.size(); i++) {
+                                        System.out.println((i + 1) + ".\t " + sortedByManager.get(i));
+                                    }
+                            }
+                            case "2" -> {
+                                    // Clone the list to avoid altering original
+                                    MyArrayList<Garda> sortedByDepartment = new MyArrayList<>();
+                                    for (int i = 0; i < gardaList.size(); i++) {
+                                        sortedByDepartment.add(gardaList.get(i));
+                                    }
+                                    
+                                    // Sort by department name
+                                    for (int i = 1; i < sortedByDepartment.size(); i++) {
+                                        Garda key = sortedByDepartment.get(i);
+                                        int j = i - 1;
+                                        while (j >= 0 && sortedByDepartment.get(j).getDepartment().getName()
+                                                            .compareToIgnoreCase(key.getDepartment().getName()) > 0) {
+                                                            sortedByDepartment.set(j + 1, sortedByDepartment.get(j));
+                                                            j--;
+                                        }
+                                        sortedByDepartment.set(j + 1, key);
+                                    }
+                                    
+                                    // Display the sorted Gardaí by department
+                                    System.out.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                                    System.out.println("---------------------------------------------------------------------------------------------------");
+                                    for (int i = 0; i < sortedByDepartment.size(); i++) {
+                                        System.out.println((i + 1) + ".\t " + sortedByDepartment.get(i));
+                                    }
+                            }
+                            default -> 
+                                // If the user types anything else, return to the main menu
+                                System.out.println("Invalid choice. Returning to main menu.");
                         }
                     }
                     case DELETE_GARDA -> { 
@@ -304,8 +381,12 @@ public class GardaStationSystem_CA2_455 {
                         try(java.io.PrintWriter writer = new java.io.PrintWriter("Garda_Report.txt")){
                             
                             // Write table headers to the file
-                            writer.printf("%-8s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
-                            writer.println("------------------------------------------------------------------------------------------------------");
+                            writer.println("===================================================================================================");
+                            writer.println("                              Welcome to Garda Station System - CA_2                               ");
+                            writer.println("                                       Student ID: 2024455                                         ");
+                            writer.println("===================================================================================================");
+                            writer.printf("%-5s %-30s %-30s %-30s%n", "#", "Name", "Manager", "Department");
+                            writer.println("---------------------------------------------------------------------------------------------------");
                             
                             // Loop through each Garda in the list and write their details in formatted rows
                             for(int i = 0; i < gardaList.size(); i++){
