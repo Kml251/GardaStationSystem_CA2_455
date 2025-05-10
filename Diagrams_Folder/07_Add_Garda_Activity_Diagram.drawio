@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.1">
+  <diagram name="Page-1" id="EpfmuZBsE2RG1LV1SROP">
+    <mxGraphModel dx="1685" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="410" y="105" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="gtRkcNtSJkR6ppTKZCWr-1" parent="1" target="gtRkcNtSJkR6ppTKZCWr-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-3" target="gtRkcNtSJkR6ppTKZCWr-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-3" value="Select &#39;3.ADD_RECORD&#39; option" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="175" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-5" target="gtRkcNtSJkR6ppTKZCWr-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-5" value="Enter Garda name" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="255" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-6" target="gtRkcNtSJkR6ppTKZCWr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-6" value="Select Manager&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2210%22%20y%3D%22150%22%20width%3D%22150%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="345" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-7" target="gtRkcNtSJkR6ppTKZCWr-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-7" value="Select Department" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="545" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-8" target="gtRkcNtSJkR6ppTKZCWr-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-8" value="Add the new Garda to List" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="745" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-9" target="gtRkcNtSJkR6ppTKZCWr-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="465" as="sourcePoint" />
+            <mxPoint x="270" y="405" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="460" />
+              <mxPoint x="310" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-19" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gtRkcNtSJkR6ppTKZCWr-14">
+          <mxGeometry x="-0.1502" y="2" relative="1" as="geometry">
+            <mxPoint x="32" y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-9" target="gtRkcNtSJkR6ppTKZCWr-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-26" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gtRkcNtSJkR6ppTKZCWr-20">
+          <mxGeometry x="-0.2133" y="-3" relative="1" as="geometry">
+            <mxPoint x="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-9" value="Is selection valid?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="357.5" y="425" width="135" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-21" target="gtRkcNtSJkR6ppTKZCWr-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340.5" y="605" as="sourcePoint" />
+            <mxPoint x="341" y="515" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="660" />
+              <mxPoint x="310" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-25" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gtRkcNtSJkR6ppTKZCWr-24">
+          <mxGeometry x="0.0122" y="-2" relative="1" as="geometry">
+            <mxPoint x="28" y="28" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-21" target="gtRkcNtSJkR6ppTKZCWr-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-28" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gtRkcNtSJkR6ppTKZCWr-27">
+          <mxGeometry x="-0.24" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-21" value="Is selection valid?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="357.5" y="625" width="135" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-29" target="gtRkcNtSJkR6ppTKZCWr-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-29" value="Display Confirmation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="825" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-31" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="410" y="905" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-37" value="Our menu designed with 9 options." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="210" y="70" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gtRkcNtSJkR6ppTKZCWr-40" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.165;entryY=0.159;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="gtRkcNtSJkR6ppTKZCWr-37" target="gtRkcNtSJkR6ppTKZCWr-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="405" as="sourcePoint" />
+            <mxPoint x="830" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
