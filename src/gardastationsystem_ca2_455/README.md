@@ -66,13 +66,13 @@ Exports Garda list to a formmatted text file: `Garda_Report.txt`
 
 ## 🖊️ Editable Diagrams (draw.io)
 
-- [01_Add_a_New_Garda](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/01_Add_a_New_Garda.drawio)
-- [02_Generate_Random_Gardai](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/02_Generate_Random_Gardai.drawio)
-- [03_Sort_Gardaí_Alphabetically](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/03_Sort_Garda%C3%AD_Alphabetically.drawio)
-- [04_Search_Garda_by_Name](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/04_Search_Garda_by_Name.drawio)
-- [05_Export_Garda_List](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/05_Export_Garda_List.drawio)
-- [06_GardaStationSystem_Class_Diagram](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/06_GardaStationSystem_Class_Diagram.drawio)
-- [07_Add_Garda_Activity_Diagram](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/main/07_Add_Garda_Activity_Diagram.drawio)
+- [01_Add_a_New_Garda](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/01_Add_a_New_Garda.drawio)
+- [02_Generate_Random_Gardai](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/02_Generate_Random_Gardai.drawio)
+- [03_Sort_Gardaí_Alphabetically](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/03_Sort_Garda%C3%AD_Alphabetically.drawio)
+- [04_Search_Garda_by_Name](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/04_Search_Garda_by_Name.drawio)
+- [05_Export_Garda_List](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/05_Export_Garda_List.drawio)
+- [06_GardaStationSystem_Class_Diagram](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/06_GardaStationSystem_Class_Diagram.drawio)
+- [07_Add_Garda_Activity_Diagram](https://app.diagrams.net/?url=https://raw.githubusercontent.com/Kml251/GardaStationSystem_CA2_455/Diagrams_Folder/07_Add_Garda_Activity_Diagram.drawio)
 
 ---
 
